@@ -11,6 +11,8 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Image').Image[]} */
   images = null
 
+    /** @type {import('./Models/Weather').Weather[]} */
+  weather = []
 }
 
 export const appState = new Proxy(new AppState(), {
