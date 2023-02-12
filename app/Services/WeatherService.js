@@ -6,14 +6,22 @@ class WeatherService  {
 
     async getWeather() {
         const res = await sandboxAPI.get('/weather')
-        appState.weather = new Weather(res.data) 
+        const newTemps= res.data.map(weatherService => new Weather(WeatherService))
+        appState.weather.push(newTemps) 
+        
         // console.log('this is how weather comes in from API' ,res.data)
     }
 
 
-
-
+// async addWeather() {
+//     const newWeather = {
+//         temp: appState.weather.main.temp,
+//         weather: appState.weather.data.weather.main,
+//         wind: appState.weather.data.wind.speed,
+//     }
 }
 
 
-export const WeatherService = new WeatherService()
+
+
+export const weatherService = new WeatherService()

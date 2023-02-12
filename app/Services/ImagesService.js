@@ -1,6 +1,5 @@
 import { appState } from "../AppState.js"
 import { Image } from "../Models/Image.js"
-import { Weather } from "../Models/Weather.js"
 import { sandboxAPI } from "./AxiosService.js"
 
 class ImageService {

@@ -1,8 +1,9 @@
 import { appState } from "../AppState.js"
-import { Weather } from "../Models/Weather.js"
 import { imageService } from "../Services/ImagesService.js"
+import { Weather } from "../Models/Weather.js"
 import { Pop } from "../Utils/Pop.js"
 import { setHTML, setText } from "../Utils/Writer.js"
+import { weatherService } from "../Services/WeatherService.js"
 
 function _drawImages() {
     document.body.style.backgroundImage = `url(${appState.images.url})`
@@ -16,15 +17,19 @@ function _getTime() {
 }
 setInterval(_getTime, 1000)
 
+
+
+
 function _drawWeather() {
-  let template = appState.weather == `
-        <img src="${this.weather}" alt="weather icon?">
-            <h1>${this.temp}</h1>
-            <h1>${this.wind}</h1>
-            `
+    let template = ''
+    appState.weather.forEach(w => template += w.WeatherCard)
 setHTML('weather', template)
 console.log(template)
 }
+
+
+
+
 
 export class ImagesController {
 
@@ -48,7 +53,7 @@ async getImages() {
 
 async getWeather() {
     try {
-        await imageService.getWeather()
+        await weatherService.getWeather()
     } catch (error) {
         console.log(error)
         Pop.error(error)
