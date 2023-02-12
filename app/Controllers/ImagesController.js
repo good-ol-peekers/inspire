@@ -1,6 +1,5 @@
 import { appState } from "../AppState.js"
 import { imageService } from "../Services/ImagesService.js"
-import { Weather } from "../Models/Weather.js"
 import { Pop } from "../Utils/Pop.js"
 import { setHTML, setText } from "../Utils/Writer.js"
 import { weatherService } from "../Services/WeatherService.js"
@@ -27,7 +26,9 @@ setHTML('weather', template)
 console.log(template)
 }
 
+function _drawQuotes() {
 
+}
 
 
 
@@ -38,8 +39,10 @@ constructor() {
     this.getWeather()
     appState.on('images', _drawImages)
     appState.on('weather', _drawWeather)
+    appState.on('quotes', _drawQuotes)
     _getTime()
     _drawWeather()
+    this.getQuotes()
 }
 
 async getImages() {
@@ -60,7 +63,13 @@ async getWeather() {
     }
 }
 
-
+async getQuotes() {
+    try {
+        await imageService.getImages()
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 
 }

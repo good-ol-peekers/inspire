@@ -1,6 +1,8 @@
 import { appState } from "../AppState.js"
 import { Image } from "../Models/Image.js"
+import { Quote } from "../Models/Quote.js"
 import { sandboxAPI } from "./AxiosService.js"
+
 
 class ImageService {
 
@@ -16,6 +18,11 @@ async getImages() {
     // console.log('getImages in service', res.data)
 }
 
+async getQuotes() {
+    const res = await sandboxAPI.get('/quotes')
+    appState.quotes = new Quote(res.data)
+    console.log('this is how the quotes data looks like', res.data)
+}
 
 }
 
