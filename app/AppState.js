@@ -11,11 +11,13 @@ class AppState extends EventEmitter {
   values = loadState('values', [Value])
 
 
+  tempUnits = 'f'
   /** @type {import('./Models/Image').Image[]} */
   images = null
 
     /** @type {import('./Models/Weather').Weather[]} */
-  weather = []
+  weather = null
+
 /** @type {import('./Models/Todo').Todo[]} */
   todos = []
 

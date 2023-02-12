@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,27 +61,23 @@
 
 
 
-
-
-
   <main>
     <div class="container-fluid">
       <div class="row d-flex">
         <div class="col-6">
           
           <div class="card border elevation-5">
-            <form onsubmit="app.todoController.createTodo()">
-              <h1>your todo list &&& count of how many</h1>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="deleteTask">
-                <label class="form-check-label" for="todo"> previously a created task todo here</label>
-                <button class="btn btn-outline-danger" type="button" id="deleteTask">delete</button>
-              </div>
-              <div>
-                <input type="text" placeholder="create no tasks! stay organized <3">
-              </div>
-              <button class="btn btn-outline-success" type="submit"> Create </button>
-            </form>
+            <h1>your todo list &&& count of how many</h1>
+            <div id="todos">
+
+            </div>
+            
+            <div>
+              <form onsubmit="app.todoController.createTodo()">
+                <input name="description" required id="description" type="text" placeholder="create no tasks! stay organized <3">
+                <button class="btn btn-outline-success" type="submit"> Create </button>
+              </form>
+            </div>
           </div>
             
         </div>

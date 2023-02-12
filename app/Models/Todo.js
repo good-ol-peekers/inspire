@@ -7,7 +7,15 @@ export class Todo {
    
     }
 
-
+    get TodoTemplate() {
+        return `
+            <div id='${this.id}' class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="checkbox">
+                <label class="form-check-label" for="todo">${this.description}</label>
+                <button class="btn btn-outline-danger" type="button" onclick="app.todoController.deleteTodo('${this.id}')" id="deleteTask">delete</button>
+            </div>
+        `
+    }
 
 }
 
