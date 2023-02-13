@@ -2,10 +2,7 @@ import { Value } from "./Models/Value.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 import { loadState } from "./Utils/Store.js"
-import { Quote } from "./Models/Quote.js"
-import { Todo } from "./Models/Todo.js"
-import { Weather } from "./Models/Weather.js"
-import { Image } from "./Models/Image.js"
+
 class AppState extends EventEmitter {
   /** @type {import('./Models/Value').Value[]} */
   values = loadState('values', [Value])

@@ -16,7 +16,7 @@ function ctoF(c) {
 
 function _drawImages() {
     document.body.style.backgroundImage = `url(${appState.images.url})`
-    document.body.style.backgroundSize = imgElement.naturalWidth
+    //document.body.style.backgroundSize = imgElement.naturalWidth
 }
 
 function _getTime() {
@@ -30,13 +30,13 @@ setInterval(_getTime, 1000)
 
 
 function _drawWeather() {
-    appState.weather
+   
     setHTML('weather', appState.weather.WeatherCard)
-    console.log(template)
 }
 
 function _drawQuotes() {
     
+    setHTML('quotes', appState.quotes.QuotesTemplate)
 }
 
 
@@ -50,17 +50,20 @@ export class ImagesController {
         appState.on('images', _drawImages)
         appState.on('weather', _drawWeather)
         appState.on('quotes', _drawQuotes)
+        appState.on('tempUnits', _drawWeather)
         _getTime()
-        _drawWeather()
+        //_drawWeather()
         this.getQuotes()
     }
-    static changeTemp() {
+     changeTemp() {
         if(appState.tempUnits == 'f') {
         appState.weather.temp = fToC(appState.weather.temp)
         appState.tempUnits = 'c'
+        console.log("changing to c")
         } else { 
             appState.weather.temp = ctoF(appState.weather.temp)
             appState.tempUnits = 'f'
+            console.log("changing to f")
         }
     }
     async getImages() {
@@ -83,7 +86,7 @@ async getWeather() {
 
 async getQuotes() {
     try {
-        await imageService.getImages()
+        await imageService.getQuotes()
     } catch (error) {
         console.log(error)
     }
