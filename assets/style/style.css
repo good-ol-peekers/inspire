@@ -2,7 +2,15 @@
 body {
     background-size: cover;
 }
-.dateStyle{
+.buttonStyle1{
+    color: bisque;
+    text-shadow: 3px 1px 1px black;
+    opacity: 70%;
+    background-color: rgb(140, 165, 180);
+    border-radius: 11%;
+    box-shadow: 1px 2px 1px rgb(81, 74, 74);
+}
+.textStyle{
     color: white;
-    text-shadow: 2px 2px 2px black;
+    text-shadow: 2px 2px 2px rgb(33, 32, 32);
 }

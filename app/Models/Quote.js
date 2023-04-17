@@ -8,9 +8,9 @@ get QuotesTemplate() {
 return `
 
 <div>
-<h1>
+<p class="fs-5 p-2">
 ${this.content}
-</h1>
+</p>
 <div class="on-hover">${this.author}</div>
 </div>
 `
