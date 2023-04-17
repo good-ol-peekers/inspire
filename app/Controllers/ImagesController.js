@@ -21,7 +21,6 @@ function _drawImages() {
 
 function _getTime() {
     let time = new Date().toTimeString();
-    // console.log (time)
     setText('dateTime', time)
 }
 setInterval(_getTime, 1000)

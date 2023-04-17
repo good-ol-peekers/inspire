@@ -11,10 +11,10 @@ export class Weather {
 
     get WeatherCard() {
         return `
-            <h1>${this.temp}</h1>
-            <h1>${this.wind}</h1>
+            <h1> Current Temps ${this.temp}</h1>
+            <h1> Wind Speed ${this.wind}</h1>
             <div>
-            <button type="button" onclick="app.imagesController.changeTemp()" class="btn btn-outline-success" >change temperature units</button>
+            <button type="button" onclick="app.imagesController.changeTemp()" class="btn btn-outline-success"> <i class="mdi mdi-thermometer"></i> <i class="mdi mdi-temperature-celsius"></i> <i class="mdi mdi-temperature-fahrenheit"></> </button>
             </div>               
             `
     }

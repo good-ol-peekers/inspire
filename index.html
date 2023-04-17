@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,11 +26,11 @@
   <header>
     <div class="container-fluid">
       <div class="row d-flex">
-        <div class="col-6">
+        <div class="col-12 text-center mt-3 dateStyle">
           <div>
             <h1 id="dateTime"></h1>
           </div>
-          
+
         </div>
         <!-- <div class="col-6">
           <div class="text-end" id="weather">
@@ -43,18 +42,18 @@
         </div> -->
       </div>
     </div>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12">
-      <div class="text-end" id="weather">
-        <!-- <h1>temp</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-end text-light" id="weather">
+            <!-- <h1>temp</h1>
         <h1>icon</h1>
         <h1>wind speed</h1> -->
+          </div>
+        </div>
       </div>
+
     </div>
-  </div>
-  
-</div>
   </header>
 
 
@@ -65,8 +64,8 @@
     <div class="container-fluid">
       <div class="row d-flex">
         <div class="col-6">
-          
-          <div class="card border elevation-5" >
+
+          <div class="card border elevation-5">
             <div id="count">
               <h1>your todo list &&& count of how many</h1>
 
@@ -74,19 +73,20 @@
             <div id="todos">
 
             </div>
-            
+
             <div>
               <form onsubmit="app.todoController.createTodo()">
-                <input name="description" required id="description" type="text" placeholder="create no tasks! stay organized <3">
+                <input name="description" required id="description" type="text"
+                  placeholder="create no tasks! stay organized <3">
                 <button class="btn btn-outline-success" type="submit"> Create </button>
               </form>
             </div>
             <div>
               <!-- <button type="button" onclick="app.imagesController.changeTemp()" class="btn btn-outline-success">change temperature -->
-                units</button>
+              </button>
             </div>
           </div>
-            
+
         </div>
         <div class="col-6" id="quotes">
           <div>

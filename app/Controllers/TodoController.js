@@ -3,7 +3,7 @@ import { Pop } from "../Utils/Pop.js"
 import { getFormData } from "../Utils/FormHandler.js"
 import { appState } from "../AppState.js"
 import { setHTML } from "../Utils/Writer.js"
-import { EventEmitter } from "../Utils/EventEmitter.js"
+// import { EventEmitter } from "../Utils/EventEmitter.js"
 import { Todo } from "../Models/Todo.js"
 
 function _drawCount() {
@@ -65,3 +65,4 @@ try {
     }
 }
 }
+
