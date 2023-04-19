@@ -11,17 +11,19 @@ export class Todo {
 
     static CountTemplate() {
         return `
-        <h1>your todo list ${appState.todos.filter(n => n.completed == false).length} uncompleted tasks 
-        </h1>
+        <h3 class="text-center textStyle"> Number of Tasks ${appState.todos.filter(n => n.completed == false).length} 
+        </h3>
         `
     }
 
     get TodoTemplate() {
         return `
-            <div id='${this.id}' class="form-check">
-                <input class="form-check-input" onclick="app.todoController.updateTodo('${this.id}')" type="checkbox" value="" id="checkbox" ${this.completed ? "checked" : ""}>
-                <label class="form-check-label" for="todo">${this.description}</label>
-                <button class="btn btn-outline-danger" type="button" onclick="app.todoController.deleteTodo('${this.id}')" id="deleteTask">delete</button>
+            <div id='${this.id}' class="form-check mt-3">
+            <div class="d-flex justify-content-around">
+                <input title="On Click Mark Task Completed" class="mx-1 mt-3 form-check-input" onclick="app.todoController.updateTodo('${this.id}')" type="checkbox" value="" id="checkbox" ${this.completed ? "checked" : ""}>
+                    <label class="form-check-label mx-2 mt-2 textStyle" for="todo">${this.description}</label>
+                    <button title="On Click Delete Task" class="btn textStyle" type="button" onclick="app.todoController.deleteTodo('${this.id}')" id="deleteTask"><i class="mdi mdi-delete-circle"></i></button>
+                    </div>
             </div>
         `
     }

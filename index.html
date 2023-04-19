@@ -53,17 +53,17 @@
     <div class="container-fluid">
       <div class="row d-flex">
         <div class="col-6">
-          <div class="card border elevation-5">
+          <div class="customGlassCard elevation-5">
             <div id="count">
-              <h1>your todo list &&& count of how many</h1>
+              <!-- <h1>your todo list &&& count of how many</h1> -->
             </div>
             <div id="todos">
             </div>
-            <div>
+            <div class="text-end">
               <form onsubmit="app.todoController.createTodo()">
                 <input name="description" required id="description" type="text"
-                  placeholder="create no tasks! stay organized <3">
-                <button class="btn btn-outline-success" type="submit"> Create </button>
+                  placeholder="New Tasks">
+                <button class="btn btn-outline-success m-3" type="submit"> <i class="mdi mdi-card-plus-outline"></i> </button>
               </form>
             </div>
           </div>
